@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
 app.post('/player1', (req, res) => {
     res.render("player1.ejs", {
 
-        inputplayer1: req.body.input-player1,
-        inputplayer2: req.body.input-player2
+        inputplayer1: req.body.inputplayer1,
+        inputplayer2: req.body.inputplayer2
 
     })
 })
