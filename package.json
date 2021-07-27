@@ -1,0 +1,23 @@
+{
+  "name": "battle-app",
+  "version": "1.0.0",
+  "description": "Client | | Browser | | Server\r ---|--- |--- | --- | ---\r |\tInput: [name1] [name2]\t ------------>\tPOST Request\t|\r |\t\t\t\t|\r |\tRender opponent HP\t<----------\tHTML file\t|\r |\t\t\t\t|\r |\tInput Attack\t --------->\tPost [Attack]\t|\r |\tRender HTML: Confirm hit\t<----------\tHTML file\t|\r |\t\t\t\t|\r |\tInput Attack P2 10HP\t -------->\tPOST Request\t|\r |\t\t\t\t|\r |\tInput [end turn]\t --------->\tPOST Request\t|\r |\tRender: Other players Screen\t<-----------\tHTML file\t|\r |\t\t\t\t|\r |\tRender turn player HP\t<----------\tHTML file\t|\r |\t\t\t\t|\r |\tInput Attack\t --------->\tPost [Attack]\t|\r |\tRender HTML: Confirm hit\t<----------\tHTML file\t|\r |\t\t\t\t|\r |\tInput Attack P1 10HP\t -------->\tPOST Request\t|\r |\t\t\t\t|\r |\tRender: K.O\t<---------\tHMTL file\t|",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themegatree/Battle-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/themegatree/Battle-App/issues"
+  },
+  "homepage": "https://github.com/themegatree/Battle-App#readme",
+  "devDependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
