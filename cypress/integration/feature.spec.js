@@ -15,4 +15,8 @@ describe("User Stories: ", function(){
     it("story 2", function() {
         cy.get('#player2HP').should('contain', '1000000')
     })
+    it("story 3", function() {
+        cy.get('#attack1').click()
+        cy.get('#hitconfirmation1').should('contain','Aw that hurt')
+    })
 })
