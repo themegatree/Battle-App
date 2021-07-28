@@ -1,11 +1,15 @@
 <h1 id='player1name'><%= `${inputplayer1}` %></h1>
-<form action = "/player1-confirm-hit" method="post">
-    <button id="attack1">Hit</button>
-</form>
+<h2 id='player1HP'><%= `${player1HP}` %></h2>
+
+<h1 id="hitconfirmation2"><%= `${confirmHit}` %></h1>
+
 <h1 id='player2name'><%= `${inputplayer2}` %></h1>
 <h2 id='player2HP'><%= `${player2HP}` %></h2>
 
-<h1 id="hitconfirmation1"><%= `${confirmHit}` %></h1>
-<form action = " /player2" method = "post">
+
+<form action = "/player2-confirm-hit" method="post">
+    <button id="attack2">Hit</button>
+</form>
+<form action = " /player1" method = "post">
     <button id= "changeplayer">End Turn</button>
 </form>

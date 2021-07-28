@@ -12,33 +12,36 @@ app.use(express.urlencoded({extended : true}))
 app.get('/', (req, res) => {
   res.render("index.ejs")
 })
-app.post('/player1', (req, res) => {
+app.post('/player1-init', (req, res) => {
     player1 = new Player(req.body.inputplayer1);
     player2 = new Player(req.body.inputplayer2);
 
     res.render("player1.ejs", {
         inputplayer1: player1.name,
         inputplayer2: player2.name,
+        player1HP: player1.HP,
         player2HP: player2.HP,
         confirmHit: ""
 
     })
-
 })
 
-// app.get("/player1-2", (req,res) => {
-//   res.render("player1.ejs", {
-//     inputplayer1: player1.name,
-//     inputplayer2: player2.name,
-//     player2HP: player2.HP,
-//   })
-// })
+app.post('/player1', (req, res) => {
+  res.render("player1.ejs",{
+    inputplayer1: player1.name,
+        inputplayer2: player2.name,
+        player1HP: player1.HP,
+        player2HP: player2.HP,
+        confirmHit: ""
+  })
+})
 
 app.post('/player1-confirm-hit', (req, res) => {
   player2.takeHit()
   res.render("player1.ejs", {
     inputplayer1: player1.name,
         inputplayer2: player2.name,
+        player1HP: player1.HP,
         player2HP: player2.HP,
         confirmHit: "Aw that hurt!"
     })
@@ -47,9 +50,21 @@ app.post('/player2', (req, res) => {
   res.render("player2.ejs",{
     inputplayer1: player1.name,
         inputplayer2: player2.name,
+        player1HP: player1.HP,
         player2HP: player2.HP,
         confirmHit: ""
   })
+})
+
+app.post('/player2-confirm-hit', (req, res) => {
+  player1.takeHit()
+  res.render("player2.ejs", {
+    inputplayer1: player1.name,
+        inputplayer2: player2.name,
+        player1HP: player1.HP,
+        player2HP: player2.HP,
+        confirmHit: "Aw that hurt!"
+    })
 })
 
 app.listen(port, () => {
