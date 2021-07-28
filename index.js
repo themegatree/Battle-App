@@ -20,6 +20,8 @@ app.post('/player1', (req, res) => {
         inputplayer1: player1.name,
         inputplayer2: player2.name,
         player2HP: player2.HP,
+        confirmHit: ""
+
     })
 
 })
@@ -32,12 +34,14 @@ app.post('/player1', (req, res) => {
 //   })
 // })
 
-app.post('/player1', (req, res) => {
+app.post('/player1-confirm-hit', (req, res) => {
+  player2.takeHit()
   res.render("player1.ejs", {
-    inputplayer1: "P1",
-    inputplayer2: "P2",
-    player2HP: 15,
-  })
+    inputplayer1: player1.name,
+        inputplayer2: player2.name,
+        player2HP: player2.HP,
+        confirmHit: "Aw that hurt!"
+    })
 })
 
 app.listen(port, () => {

@@ -1,7 +1,7 @@
 class Player {
     constructor(name){
         this.name = name,
-        this.HP = 20
+        this.HP = 1000000
     }
     takeHit() {this.HP -= 10}
 }
