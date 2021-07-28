@@ -43,6 +43,14 @@ app.post('/player1-confirm-hit', (req, res) => {
         confirmHit: "Aw that hurt!"
     })
 })
+app.post('/player2', (req, res) => {
+  res.render("player2.ejs",{
+    inputplayer1: player1.name,
+        inputplayer2: player2.name,
+        player2HP: player2.HP,
+        confirmHit: ""
+  })
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
