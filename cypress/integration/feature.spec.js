@@ -17,6 +17,11 @@ describe("User Stories: ", function(){
     })
     it("story 3", function() {
         cy.get('#attack1').click()
-        cy.get('#hitconfirmation1').should('contain','Aw that hurt')
+        cy.get('#hitconfirmation1').should('contain','Aw that hurt!')
+    })
+
+    it("story 4", function() {
+        cy.get("#changeplayer").click()
+        cy.url().should("include", "/player2")
     })
 })
