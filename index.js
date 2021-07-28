@@ -38,13 +38,20 @@ app.post('/player1', (req, res) => {
 
 app.post('/player1-confirm-hit', (req, res) => {
   player2.takeHit()
-  res.render("player1.ejs", {
-    inputplayer1: player1.name,
+  //if HP <= 0 then res.render P2 defeat
+  if (player2.HP <=0){
+    res.render("player2-defeat", {})
+  }
+  //else Code below
+  else{
+    res.render("player1.ejs", {
+      inputplayer1: player1.name,
         inputplayer2: player2.name,
         player1HP: player1.HP,
         player2HP: player2.HP,
         confirmHit: "Aw that hurt!"
-    })
+      })
+  }
 })
 app.post('/player2', (req, res) => {
   res.render("player2.ejs",{
@@ -58,13 +65,20 @@ app.post('/player2', (req, res) => {
 
 app.post('/player2-confirm-hit', (req, res) => {
   player1.takeHit()
-  res.render("player2.ejs", {
-    inputplayer1: player1.name,
+    //if HP <= 0 then res.render P2 defeat
+    if (player1.HP <=0){
+      res.render("player1-defeat", {})
+    }
+    //else Code below
+    else{
+      res.render("player2.ejs", {
+      inputplayer1: player1.name,
         inputplayer2: player2.name,
         player1HP: player1.HP,
         player2HP: player2.HP,
         confirmHit: "Aw that hurt!"
-    })
+      })
+    }
 })
 
 app.listen(port, () => {

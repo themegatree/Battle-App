@@ -13,7 +13,7 @@ describe("User Stories: ", function(){
     })
 
     it("story 2", function() {
-        cy.get('#player2HP').should('contain', '1000000')
+        cy.get('#player2HP').should('contain', '20')
     })
     it("story 3", function() {
         cy.get('#attack1').click()
@@ -24,4 +24,15 @@ describe("User Stories: ", function(){
         cy.get("#changeplayer").click()
         cy.url().should("include", "/player2")
     })
+
+    it("story 6", function() {
+        cy.get('#player1HP').should('contain', '20')
+    })
+
+    it("story 7", function() {
+        cy.get("#attack1").click();
+        cy.get("#attack1").click();
+        cy.get("#message2").should("contain", "Player 2 Loses")
+    })
+
 })
